@@ -1,6 +1,7 @@
 package com.test.task.yegorchevardin.controllers;
 
-import com.test.task.yegorchevardin.service.dto.ClientDto;
+import com.test.task.yegorchevardin.service.dto.EmailDto;
+import com.test.task.yegorchevardin.service.dto.FilePathDto;
 import com.test.task.yegorchevardin.service.services.ObjectFileExtractor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,13 +20,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1")
 public class FileController {
-    private final ObjectFileExtractor<ClientDto> fileExtractor;
+    private final ObjectFileExtractor<FilePathDto> fileExtractor;
 
     /**
      * Controller for getting ready file with clients
      */
     @PostMapping("/clients")
-    public ResponseEntity<List<ClientDto>> showClients() {
+    public ResponseEntity<List<FilePathDto>> showClients() {
         return ResponseEntity.ok(fileExtractor.getObjects());
     }
 }
