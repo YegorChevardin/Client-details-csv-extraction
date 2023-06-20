@@ -34,18 +34,20 @@ public class CsvFormServiceImpl implements CsvFormService {
                 ClientDto::getFullInitials
         ).collect(Collectors.toList()));
 
+        StringColumn emailColumn = StringColumn.create("Client emails");
+        prepareEmailData(emailColumn, emailDtos);
+
+        StringColumn filePathColumn = StringColumn.create("Client files");
+        prepareFilePathData(filePathColumn, filePathDtos);
+
         return table;
     }
 
-    private List<String> prepareEmailData(List<EmailDto> emailDtos) {
-        List<String> result = new ArrayList<>();
-
-        return result;
+    private void prepareEmailData(StringColumn column, List<EmailDto> emailDtos) {
+        //todo
     }
 
-    private List<String> prepareFilePathData(List<FilePathDto> filePathDtos) {
-        List<String> result = new ArrayList<>();
-
-        return result;
+    private void prepareFilePathData(StringColumn column, List<FilePathDto> filePathDtos) {
+        //todo
     }
 }
